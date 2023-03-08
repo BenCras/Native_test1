@@ -19,7 +19,13 @@ class MainApp extends StatelessWidget {
       );
 }
 
-class AppTree extends StatelessWidget {
+class AppTree extends StatefulWidget {
+  AppTreeState createState() => AppTreeState();
+}
+
+class AppTreeState extends State<AppTree> {
+  String activeTab = "";
+
   @override
   Widget build(BuildContext context) {
     // Return a colum with top margin of 20.0
@@ -33,7 +39,8 @@ class AppTree extends StatelessWidget {
                   Expanded(
                       child: GestureDetector(
                     onTap: () {
-                      print('Dog');
+                      activeTab = 'Dog';
+                      setState(() {});
                     },
                     child: Padding(
                         padding: const EdgeInsets.all(5),
@@ -43,7 +50,9 @@ class AppTree extends StatelessWidget {
                           ),
                           child: DecoratedBox(
                             decoration: BoxDecoration(
-                              color: inActiveColor,
+                              color: activeTab == 'Dog'
+                                  ? activeColor
+                                  : inActiveColor,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Center(
@@ -62,7 +71,8 @@ class AppTree extends StatelessWidget {
                   Expanded(
                       child: GestureDetector(
                     onTap: () {
-                      print('Cat');
+                      activeTab = 'Cat';
+                      setState(() {});
                     },
                     child: Padding(
                         padding: const EdgeInsets.all(5),
@@ -72,7 +82,9 @@ class AppTree extends StatelessWidget {
                           ),
                           child: DecoratedBox(
                             decoration: BoxDecoration(
-                              color: inActiveColor,
+                              color: activeTab == 'Cat'
+                                  ? activeColor
+                                  : inActiveColor,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Center(
@@ -91,7 +103,8 @@ class AppTree extends StatelessWidget {
                   Expanded(
                       child: GestureDetector(
                     onTap: () {
-                      print('Bird');
+                      activeTab = 'Bird';
+                      setState(() {});
                     },
                     child: Padding(
                         padding: const EdgeInsets.all(5),
@@ -101,7 +114,9 @@ class AppTree extends StatelessWidget {
                           ),
                           child: DecoratedBox(
                             decoration: BoxDecoration(
-                              color: inActiveColor,
+                              color: activeTab == 'Bird'
+                                  ? activeColor
+                                  : inActiveColor,
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Center(
