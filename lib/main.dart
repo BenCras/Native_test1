@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:native_test1/data.dart';
 
 void main() {
   runApp(MainApp());
@@ -32,10 +33,14 @@ class AppTree extends StatelessWidget {
                       print('Dog');
                     },
                     child: Container(
-                      height: 60.0,
-                      color: Colors.red,
-                      padding: EdgeInsets.all(5.0),
-                    ),
+                        height: 60.0,
+                        color: inActiveColor,
+                        padding: EdgeInsets.all(5.0),
+                        child: FadeInImage(
+                          placeholder: AssetImage(''),
+                          image: AssetImage('assets/images/dog.png'),
+                          fit: BoxFit.fitHeight,
+                        )),
                   )),
                   Expanded(
                       child: GestureDetector(
@@ -43,10 +48,14 @@ class AppTree extends StatelessWidget {
                       print('Cat');
                     },
                     child: Container(
-                      height: 60.0,
-                      color: Colors.yellow,
-                      padding: EdgeInsets.all(5.0),
-                    ),
+                        height: 60.0,
+                        color: inActiveColor,
+                        padding: EdgeInsets.all(5.0),
+                        child: FadeInImage(
+                          placeholder: AssetImage(''),
+                          image: AssetImage('assets/images/cat.png'),
+                          fit: BoxFit.fitHeight,
+                        )),
                   )),
                   Expanded(
                       child: GestureDetector(
@@ -54,10 +63,14 @@ class AppTree extends StatelessWidget {
                       print('Bird');
                     },
                     child: Container(
-                      height: 60.0,
-                      color: Colors.green,
-                      padding: EdgeInsets.all(5.0),
-                    ),
+                        height: 60.0,
+                        color: inActiveColor,
+                        padding: EdgeInsets.all(5.0),
+                        child: FadeInImage(
+                          placeholder: AssetImage(''),
+                          image: AssetImage('assets/images/parrot.png'),
+                          fit: BoxFit.fitHeight,
+                        )),
                   )),
                 ],
               ),
