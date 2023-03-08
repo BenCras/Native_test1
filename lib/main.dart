@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:native_test1/data.dart';
 
 void main() {
@@ -32,14 +35,28 @@ class AppTree extends StatelessWidget {
                     onTap: () {
                       print('Dog');
                     },
-                    child: Container(
-                        height: 60.0,
-                        color: inActiveColor,
-                        padding: EdgeInsets.all(5.0),
-                        child: FadeInImage(
-                          placeholder: AssetImage(''),
-                          image: AssetImage('assets/images/dog.png'),
-                          fit: BoxFit.fitHeight,
+                    child: Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            maxHeight: 60.0,
+                          ),
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: inActiveColor,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Center(
+                                child: Container(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: FadeInImage(
+                                      placeholder:
+                                          AssetImage('assets/images/dog.png'),
+                                      image:
+                                          AssetImage('assets/images/dog.png'),
+                                      fit: BoxFit.fitHeight,
+                                    ))),
+                          ),
                         )),
                   )),
                   Expanded(
@@ -47,14 +64,28 @@ class AppTree extends StatelessWidget {
                     onTap: () {
                       print('Cat');
                     },
-                    child: Container(
-                        height: 60.0,
-                        color: inActiveColor,
-                        padding: EdgeInsets.all(5.0),
-                        child: FadeInImage(
-                          placeholder: AssetImage(''),
-                          image: AssetImage('assets/images/cat.png'),
-                          fit: BoxFit.fitHeight,
+                    child: Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            maxHeight: 60.0,
+                          ),
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: inActiveColor,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Center(
+                                child: Container(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: FadeInImage(
+                                      placeholder:
+                                          AssetImage('assets/images/cat.png'),
+                                      image:
+                                          AssetImage('assets/images/cat.png'),
+                                      fit: BoxFit.fitHeight,
+                                    ))),
+                          ),
                         )),
                   )),
                   Expanded(
@@ -62,14 +93,28 @@ class AppTree extends StatelessWidget {
                     onTap: () {
                       print('Bird');
                     },
-                    child: Container(
-                        height: 60.0,
-                        color: inActiveColor,
-                        padding: EdgeInsets.all(5.0),
-                        child: FadeInImage(
-                          placeholder: AssetImage(''),
-                          image: AssetImage('assets/images/parrot.png'),
-                          fit: BoxFit.fitHeight,
+                    child: Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: ConstrainedBox(
+                          constraints: BoxConstraints(
+                            maxHeight: 60.0,
+                          ),
+                          child: DecoratedBox(
+                            decoration: BoxDecoration(
+                              color: inActiveColor,
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: Center(
+                                child: Container(
+                                    padding: EdgeInsets.all(5.0),
+                                    child: FadeInImage(
+                                      placeholder: AssetImage(
+                                          'assets/images/parrot.png'),
+                                      image: AssetImage(
+                                          'assets/images/parrot.png'),
+                                      fit: BoxFit.fitHeight,
+                                    ))),
+                          ),
                         )),
                   )),
                 ],
